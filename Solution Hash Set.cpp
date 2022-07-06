@@ -8,12 +8,12 @@ public:
     int longestConsecutive(vector<int>& nums) {
 
         unordered_set<int> inputUniqueIntegers;
-        for (int i = 0; i < nums.size(); ++i) {
-            inputUniqueIntegers.insert(nums[i]);
+        for (const auto& n : nums) {
+            inputUniqueIntegers.insert(n);
         }
 
         int longestConsecutiveSequence = 0;
-        for (int n : inputUniqueIntegers) {
+        for (const auto& n : inputUniqueIntegers) {
 
             //C++20: !inputUniqueIntegers.contains(n - 1)
             if (inputUniqueIntegers.find(n - 1) == inputUniqueIntegers.end()) {
